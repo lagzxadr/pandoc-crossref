@@ -1,27 +1,31 @@
 This is a demo file for pandoc-crossref. With this filter, you can
-cross-reference figures (see figs. 1-3), display equations (see eq. 1)
+cross-reference figures (see figs. 2-4), display equations (see eq. 1)
 and tables (see tbl. 1)
+
+For immediate example, see fig. 1
+
+![Figure \# 1: A figure](img1.jpg)
 
 There is also support for code blocks, for example, lsts. 1-3
 
-It's possible to capitalize reference prefixes, like this: Fig. 1.
+It's possible to capitalize reference prefixes, like this: Fig. 2.
 
 In case of multiple references, capitalization is determined by first
-reference. Figs. 1, 2 is capitalized, while figs. 1, 2 is not.
+reference. Figs. 2, 3 is capitalized, while figs. 2, 3 is not.
 
-It is also possible to mix different references, like fig. 1, tbl. 1,
-lsts. 1, 2, figs. 2, 3, which will be grouped in order they are
+It is also possible to mix different references, like fig. 2, tbl. 1,
+lsts. 1, 2, figs. 3, 4, which will be grouped in order they are
 specified. You can even intermix this with regular citations, although
-it's not recommended: fig. 1, tbl. 1, [@unprocessedCitation]
+it's not recommended: fig. 2, tbl. 1, [@unprocessedCitation]
 
 Chapter 1. Figures
 ==================
 
-![Figure \# 1: First figure](img1.jpg)
+![Figure \# 2: First figure](img1.jpg)
 
-![Figure \# 2: Second figure](img2.jpg)
+![Figure \# 3: Second figure](img2.jpg)
 
-![Figure \# 3: Third figure](img3.jpg)
+![Figure \# 4: Third figure](img3.jpg)
 
 ![Unlabelled image](img1.jpg)
 
@@ -109,6 +113,14 @@ main = putStrLn "Hello World!"
 
 </div>
 
+Unnumbered chapter. {#unnumbered-chapter. .unnumbered}
+===================
+
+This chapter doesn't change chapter prefix of referenced elements,
+instead keeping number of previous chapter, e.g.
+
+$$ S(x) = \int_{x_1}^{x_2} a x+b \  \mathrm{d}x \qquad(2)$$
+
 Chapter 5. Reference lists
 ==========================
 
@@ -117,9 +129,10 @@ It's also possible to show lists of figures and tables, like this:
 List of Figures
 ---------------
 
-1.  First figure
-2.  Second figure
-3.  Third figure
+1.  A figure
+2.  First figure
+3.  Second figure
+4.  Third figure
 
 List of Tables
 --------------

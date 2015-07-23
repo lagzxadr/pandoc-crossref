@@ -2,6 +2,10 @@ This is a demo file for pandoc-crossref. With this filter, you can
 cross-reference figures (see figs. 1.1-1.3), display equations (see
 eq. 2.1) and tables (see tbl. 3.1)
 
+For immediate example, see fig. 1
+
+![Figure \# 1: A figure](img1.jpg)
+
 There is also support for code blocks, for example, lsts. 4.1-4.3
 
 It's possible to capitalize reference prefixes, like this: Fig. 1.1.
@@ -110,6 +114,14 @@ main = putStrLn "Hello World!"
 
 </div>
 
+Unnumbered chapter. {#unnumbered-chapter. .unnumbered}
+===================
+
+This chapter doesn't change chapter prefix of referenced elements,
+instead keeping number of previous chapter, e.g.
+
+$$ S(x) = \int_{x_1}^{x_2} a x+b \  \mathrm{d}x \qquad(4.1)$$
+
 Chapter 5. Reference lists
 ==========================
 
@@ -118,9 +130,10 @@ It's also possible to show lists of figures and tables, like this:
 List of Figures
 ---------------
 
-1.  First figure
-2.  Second figure
-3.  Third figure
+1.  A figure
+2.  First figure
+3.  Second figure
+4.  Third figure
 
 List of Tables
 --------------

@@ -3,6 +3,14 @@ cross-reference figures (see
 figs.~\ref{fig:figure1}, \ref{fig:figure2}, \ref{fig:figure3}), display
 equations (see eq.~\ref{eq:eqn1}) and tables (see tbl.~\ref{tbl:table1})
 
+For immediate example, see fig.~\ref{fig:figure0}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{img1.jpg}
+\caption{\label{fig:figure0}A figure}
+\end{figure}
+
 There is also support for code blocks, for example,
 lsts.~\ref{lst:captionAttr}, \ref{lst:tableCaption}, \ref{lst:wrappingDiv}
 
@@ -146,6 +154,14 @@ block, but inside div, will treat said paragraph as code block caption.
 \end{Shaded}
 
 \end{codelisting}
+
+\chapter*{Unnumbered chapter.}\label{unnumbered-chapter.}
+\addcontentsline{toc}{chapter}{Unnumbered chapter.}
+
+This chapter doesn't change chapter prefix of referenced elements,
+instead keeping number of previous chapter, e.g.
+
+\begin{equation} S(x) = \int_{x_1}^{x_2} a x+b \  \mathrm{d}x \label{eq:eqn2}\end{equation}
 
 \chapter{Chapter 5. Reference lists}\label{chapter-5.-reference-lists}
 

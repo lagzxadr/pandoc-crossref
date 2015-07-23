@@ -13,22 +13,44 @@ table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
 table.sourceCode { width: 100%; line-height: 100%; }
 td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
 td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; }
-code > span.dt { color: #902000; }
-code > span.dv { color: #40a070; }
-code > span.bn { color: #40a070; }
-code > span.fl { color: #40a070; }
-code > span.ch { color: #4070a0; }
-code > span.st { color: #4070a0; }
-code > span.co { color: #60a0b0; font-style: italic; }
-code > span.ot { color: #007020; }
-code > span.al { color: #ff0000; font-weight: bold; }
-code > span.fu { color: #06287e; }
-code > span.er { color: #ff0000; font-weight: bold; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
 </head>
 <body>
 <p>This is a demo file for pandoc-crossref. With this filter, you can cross-reference figures (see figs. 1.1-1.3), display equations (see eq. 2.1) and tables (see tbl. 3.1)</p>
+<p>For immediate example, see fig. 1</p>
+<div class="figure">
+<img src="img1.jpg" alt="Figure # 1: A figure" />
+<p class="caption">Figure # 1: A figure</p>
+</div>
 <p>There is also support for code blocks, for example, lsts. 4.1-4.3</p>
 <p>It's possible to capitalize reference prefixes, like this: Fig. 1.1.</p>
 <p>In case of multiple references, capitalization is determined by first reference. Figs. 1.1, 1.2 is capitalized, while figs. 1.1, 1.2 is not.</p>
@@ -51,7 +73,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <p class="caption">Unlabelled image</p>
 </div>
 <h1 id="chapter-2.-equations">Chapter 2. Equations</h1>
-<p><br /><span class="math"><em>P</em><sub><em>i</em></sub>(<em>x</em>) = ∑<sub><em>i</em></sub><em>a</em><sub><em>i</em></sub><em>x</em><sup><em>i</em></sup>  (2.1)</span><br /></p>
+<p><br /><span class="math display"><em>P</em><sub><em>i</em></sub>(<em>x</em>) = ∑<sub><em>i</em></sub><em>a</em><sub><em>i</em></sub><em>x</em><sup><em>i</em></sup>  (2.1)</span><br /></p>
 <h1 id="chapter-3.-tables">Chapter 3. Tables</h1>
 <table>
 <caption><em>Table 3.1</em>: Table example</caption>
@@ -115,10 +137,14 @@ main <span class="fu">=</span> putStrLn <span class="st">&quot;Hello World!&quot
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">main ::</span> <span class="dt">IO</span> ()
 main <span class="fu">=</span> putStrLn <span class="st">&quot;Hello World!&quot;</span></code></pre></div>
 </div>
+<h1 id="unnumbered-chapter." class="unnumbered">Unnumbered chapter.</h1>
+<p>This chapter doesn't change chapter prefix of referenced elements, instead keeping number of previous chapter, e.g.</p>
+<p><br /><span class="math display"><em>S</em>(<em>x</em>) = ∫<sub><em>x</em><sub>1</sub></sub><sup><em>x</em><sub>2</sub></sup><em>a</em><em>x</em> + <em>b</em> <em>d</em><em>x</em>  (4.1)</span><br /></p>
 <h1 id="chapter-5.-reference-lists">Chapter 5. Reference lists</h1>
 <p>It's also possible to show lists of figures and tables, like this:</p>
 <h2 id="list-of-figures">List of Figures</h2>
 <ol class="incremental">
+<li>A figure</li>
 <li>First figure</li>
 <li>Second figure</li>
 <li>Third figure</li>

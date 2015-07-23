@@ -3,6 +3,14 @@ cross-reference figures (see
 figs.~\ref{fig:figure1}, \ref{fig:figure2}, \ref{fig:figure3}), display
 equations (see eq.~\ref{eq:eqn1}) and tables (see tbl.~\ref{tbl:table1})
 
+For immediate example, see fig.~\ref{fig:figure0}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{img1.jpg}
+\caption{\label{fig:figure0}A figure}
+\end{figure}
+
 There is also support for code blocks, for example,
 lsts.~\ref{lst:captionAttr}, \ref{lst:tableCaption}, \ref{lst:wrappingDiv}
 
@@ -86,7 +94,7 @@ There are a couple options for code block labels. Those work only if
 code block id starts with \lstinline!lst:!, e.g.
 \lstinline!{#lst:label}!
 
-\subsection{\texorpdfstring{\lstinline!caption!
+\subsection{\texorpdfstring{\texttt{caption}
 attribute}{caption attribute}}\label{caption-attribute}
 
 \lstinline!caption! attribute will be treated as code block caption. If
@@ -123,6 +131,14 @@ block caption.
 main :: IO ()
 main = putStrLn "Hello World!"
 \end{lstlisting}
+
+\section*{Unnumbered chapter.}\label{unnumbered-chapter.}
+\addcontentsline{toc}{section}{Unnumbered chapter.}
+
+This chapter doesn't change chapter prefix of referenced elements,
+instead keeping number of previous chapter, e.g.
+
+\begin{equation} S(x) = \int_{x_1}^{x_2} a x+b \  \mathrm{d}x \label{eq:eqn2}\end{equation}
 
 \section{Chapter 5. Reference lists}\label{chapter-5.-reference-lists}
 

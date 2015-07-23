@@ -9,6 +9,10 @@ tableTemplate: "*$$tableTitle$$ $$i$$*$$titleDelim$$ $$t$$"
 
 This is a demo file for pandoc-crossref. With this filter, you can cross-reference figures (see [@fig:figure1;@fig:figure2;@fig:figure3]), display equations (see @eq:eqn1) and tables (see [@tbl:table1])
 
+For immediate example, see @fig:figure0
+
+![A figure](img1.jpg){#fig:figure0}
+
 There is also support for code blocks, for example, [@lst:captionAttr; @lst:tableCaption; @lst:wrappingDiv]
 
 It's possible to capitalize reference prefixes, like this: [@Fig:figure1].
@@ -86,6 +90,12 @@ main :: IO ()
 main = putStrLn "Hello World!"
 ```
 </div>
+
+# Unnumbered chapter. {-}
+
+This chapter doesn't change chapter prefix of referenced elements, instead keeping number of previous chapter, e.g.
+
+$$ S(x) = \int_{x_1}^{x_2} a x+b \  \mathrm{d}x $$ {#eq:eqn2}
 
 # Chapter 5. Reference lists
 
