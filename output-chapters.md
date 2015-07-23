@@ -130,20 +130,36 @@ It's also possible to show lists of figures and tables, like this:
 List of Figures
 ---------------
 
-1.  A figure
-2.  First figure
-3.  Second figure
-4.  Third figure
+<div class="list">
+
+1 A figure
+
+1.1 First figure
+
+1.2 Second figure
+
+1.3 Third figure
+
+</div>
 
 List of Tables
 --------------
 
-1.  Table example
+<div class="list">
+
+3.1 Table example
+
+</div>
 
 List of Listings
 ================
 
-1.  Listing caption
-2.  Listing caption
-3.  Listing caption
+<div class="list">
 
+4.1 Listing caption
+
+4.2 Listing caption
+
+4.3 Listing caption
+
+</div>
