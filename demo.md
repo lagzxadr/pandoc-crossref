@@ -5,9 +5,10 @@ figureTitle: "Figure \\#"
 lofTitle: "## List of Figures"
 lotTitle: "## List of Tables"
 tableTemplate: "*$$tableTitle$$ $$i$$*$$titleDelim$$ $$t$$"
+autoSectionLabels: True
 ---
 
-This is a demo file for pandoc-crossref. With this filter, you can cross-reference figures (see [@fig:figure1;@fig:figure2;@fig:figure3]), display equations (see @eq:eqn1) and tables (see [@tbl:table1])
+This is a demo file for pandoc-crossref. With this filter, you can cross-reference figures (see [@fig:figure1;@fig:figure2;@fig:figure3]), display equations (see @eq:eqn1), tables (see [@tbl:table1]) and sections ([@sec:sec1; @sec:sec2; @sec:caption-attr; @sec:table-capts; @sec:wrapping-div])
 
 For immediate example, see @fig:figure0
 
@@ -21,7 +22,9 @@ In case of multiple references, capitalization is determined by first reference.
 
 It is also possible to mix different references, like [@fig:figure1; @tbl:table1; @lst:captionAttr; @lst:tableCaption; @fig:figure2; @fig:figure3], which will be grouped in order they are specified. You can even intermix this with regular citations, although it's not recommended: [@fig:figure1; @tbl:table1; @unprocessedCitation]
 
-# Chapter 1. Figures
+You can also have custom chapter reference labels, like @sec:custlabs
+
+# Chapter 1. Figures {#sec:sec1}
 
 ![First figure](img1.jpg){#fig:figure1}
 
@@ -31,7 +34,7 @@ It is also possible to mix different references, like [@fig:figure1; @tbl:table1
 
 ![Unlabelled image](img1.jpg)
 
-# Chapter 2. Equations
+# Chapter 2. Equations {#sec:sec2}
 
 $$ P_i(x) = \sum_i a_i x^i $$ {#eq:eqn1}
 
@@ -55,7 +58,7 @@ Table without caption:
 
 There are a couple options for code block labels. Those work only if code block id starts with `lst:`, e.g. `{#lst:label}`
 
-## `caption` attribute
+## `caption` attribute {#sec:caption-attr}
 
 `caption` attribute will be treated as code block caption. If code block has both id and `caption` attributes, it will be treated as numbered code block.
 
@@ -66,7 +69,7 @@ main = putStrLn "Hello World!"
 
 \pagebreak
 
-## Table-style captions
+## Table-style captions  {#sec:table-capts}
 
 Enabled with `codeBlockCaptions` metadata option. If code block is immediately
 adjacent to paragraph, starting with `Listing: ` or `: `, said paragraph will be
@@ -106,3 +109,7 @@ It's also possible to show lists of figures and tables, like this:
 \listoftables
 
 \listoflistings
+
+# Appendix A. Custom labels {label=AppA}
+
+## This section will have custom label {#sec:custlabs label=CustLab}

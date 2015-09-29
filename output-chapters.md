@@ -1,6 +1,6 @@
 This is a demo file for pandoc-crossref. With this filter, you can
 cross-reference figures (see figs. 1.1-1.3), display equations (see
-eq. 2.1) and tables (see tbl. 3.1)
+eq. 2.1), tables (see tbl. 3.1) and sections (secs. 1, 2, 4.1-4.3)
 
 For immediate example, see fig. 1
 
@@ -19,7 +19,10 @@ they are specified. You can even intermix this with regular citations,
 although it's not recommended: fig. 1.1, tbl. 3.1,
 [@unprocessedCitation]
 
-Chapter 1. Figures
+You can also have custom chapter reference labels, like
+sec. AppA.CustLab
+
+Chapter 1. Figures {#sec:sec1}
 ==================
 
 ![Figure \# 1.1: First figure](img1.jpg)
@@ -30,12 +33,12 @@ Chapter 1. Figures
 
 ![Unlabelled image](img1.jpg)
 
-Chapter 2. Equations
+Chapter 2. Equations {#sec:sec2}
 ====================
 
 $$ P_i(x) = \sum_i a_i x^i \qquad(2.1)$$
 
-Chapter 3. Tables
+Chapter 3. Tables {#sec:chapter-3.-tables}
 =================
 
   First Header   Second Header
@@ -52,13 +55,13 @@ Table without caption:
   Content Cell   Content Cell
   Content Cell   Content Cell
 
-Chapter 4. Code blocks
+Chapter 4. Code blocks {#sec:chapter-4.-code-blocks}
 ======================
 
 There are a couple options for code block labels. Those work only if
 code block id starts with `lst:`, e.g. `{#lst:label}`
 
-`caption` attribute
+`caption` attribute {#sec:caption-attr}
 -------------------
 
 `caption` attribute will be treated as code block caption. If code block
@@ -78,7 +81,7 @@ main = putStrLn "Hello World!"
 
 \pagebreak
 
-Table-style captions
+Table-style captions {#sec:table-capts}
 --------------------
 
 Enabled with `codeBlockCaptions` metadata option. If code block is
@@ -96,7 +99,7 @@ main = putStrLn "Hello World!"
 
 </div>
 
-Wrapping div
+Wrapping div {#sec:wrapping-div}
 ------------
 
 Wrapping code block without label in a div with id `lst:...` and class,
@@ -114,7 +117,7 @@ main = putStrLn "Hello World!"
 
 </div>
 
-Unnumbered chapter. {#unnumbered-chapter. .unnumbered}
+Unnumbered chapter. {#sec:unnumbered-chapter. .unnumbered}
 ===================
 
 This chapter doesn't change chapter prefix of referenced elements,
@@ -122,7 +125,7 @@ instead keeping number of previous chapter, e.g.
 
 $$ S(x) = \int_{x_1}^{x_2} a x+b \  \mathrm{d}x \qquad(4.1)$$
 
-Chapter 5. Reference lists
+Chapter 5. Reference lists {#sec:chapter-5.-reference-lists}
 ==========================
 
 It's also possible to show lists of figures and tables, like this:
@@ -163,3 +166,9 @@ List of Listings
 4.3 Listing caption
 
 </div>
+
+Appendix A. Custom labels {#sec:appendix-a.-custom-labels label="AppA"}
+=========================
+
+This section will have custom label {#sec:custlabs label="CustLab"}
+-----------------------------------

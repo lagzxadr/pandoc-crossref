@@ -1,7 +1,8 @@
 This is a demo file for pandoc-crossref. With this filter, you can
 cross-reference figures (see
 \cref{fig:figure1,fig:figure2,fig:figure3}), display equations (see
-\cref{eq:eqn1}) and tables (see \cref{tbl:table1})
+\cref{eq:eqn1}), tables (see \cref{tbl:table1}) and sections
+(\cref{sec:sec1,sec:sec2,sec:caption-attr,sec:table-capts,sec:wrapping-div})
 
 For immediate example, see \cref{fig:figure0}
 
@@ -28,7 +29,10 @@ which will be grouped in order they are specified. You can even intermix
 this with regular citations, although it's not recommended:
 \cref{fig:figure1}, \cref{tbl:table1}, {[}@unprocessedCitation{]}
 
-\section{Chapter 1. Figures}\label{chapter-1.-figures}
+You can also have custom chapter reference labels, like
+\cref{sec:custlabs}
+
+\section{Chapter 1. Figures}\label{sec:sec1}
 
 \begin{figure}[htbp]
 \centering
@@ -54,11 +58,11 @@ this with regular citations, although it's not recommended:
 \caption{Unlabelled image}
 \end{figure}
 
-\section{Chapter 2. Equations}\label{chapter-2.-equations}
+\section{Chapter 2. Equations}\label{sec:sec2}
 
 \begin{equation} P_i(x) = \sum_i a_i x^i \label{eq:eqn1}\end{equation}
 
-\section{Chapter 3. Tables}\label{chapter-3.-tables}
+\section{Chapter 3. Tables}\label{sec:chapter-3.-tables}
 
 \begin{longtable}[c]{@{}ll@{}}
 \caption{\label{tbl:table1}Table example }\tabularnewline
@@ -87,13 +91,13 @@ Content Cell & Content Cell\tabularnewline
 \bottomrule
 \end{longtable}
 
-\section{Chapter 4. Code blocks}\label{chapter-4.-code-blocks}
+\section{Chapter 4. Code blocks}\label{sec:chapter-4.-code-blocks}
 
 There are a couple options for code block labels. Those work only if
 code block id starts with \texttt{lst:}, e.g. \texttt{\{\#lst:label\}}
 
 \subsection{\texorpdfstring{\texttt{caption}
-attribute}{caption attribute}}\label{caption-attribute}
+attribute}{caption attribute}}\label{sec:caption-attr}
 
 \texttt{caption} attribute will be treated as code block caption. If
 code block has both id and \texttt{caption} attributes, it will be
@@ -114,7 +118,7 @@ treated as numbered code block.
 
 \pagebreak
 
-\subsection{Table-style captions}\label{table-style-captions}
+\subsection{Table-style captions}\label{sec:table-capts}
 
 Enabled with \texttt{codeBlockCaptions} metadata option. If code block
 is immediately adjacent to paragraph, starting with \texttt{Listing:} or
@@ -134,7 +138,7 @@ is immediately adjacent to paragraph, starting with \texttt{Listing:} or
 
 \end{codelisting}
 
-\subsection{Wrapping div}\label{wrapping-div}
+\subsection{Wrapping div}\label{sec:wrapping-div}
 
 Wrapping code block without label in a div with id \texttt{lst:...} and
 class, starting with \texttt{listing}, and adding paragraph before code
@@ -154,7 +158,7 @@ block, but inside div, will treat said paragraph as code block caption.
 
 \end{codelisting}
 
-\section*{Unnumbered chapter.}\label{unnumbered-chapter.}
+\section*{Unnumbered chapter.}\label{sec:unnumbered-chapter.}
 \addcontentsline{toc}{section}{Unnumbered chapter.}
 
 This chapter doesn't change chapter prefix of referenced elements,
@@ -162,7 +166,8 @@ instead keeping number of previous chapter, e.g.
 
 \begin{equation} S(x) = \int_{x_1}^{x_2} a x+b \  \mathrm{d}x \label{eq:eqn2}\end{equation}
 
-\section{Chapter 5. Reference lists}\label{chapter-5.-reference-lists}
+\section{Chapter 5. Reference
+lists}\label{sec:chapter-5.-reference-lists}
 
 It's also possible to show lists of figures and tables, like this:
 
@@ -171,3 +176,7 @@ It's also possible to show lists of figures and tables, like this:
 \listoftables
 
 \listoflistings
+
+\section{Appendix A. Custom labels}\label{sec:appendix-a.-custom-labels}
+
+\subsection{This section will have custom label}\label{sec:custlabs}
