@@ -56,7 +56,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In case of multiple references, capitalization is determined by first reference. Figs. 2, 3 is capitalized, while figs. 2, 3 is not.</p>
 <p>It is also possible to mix different references, like fig. 2, tbl. 1, lsts. 1, 2, figs. 3, 4, which will be grouped in order they are specified. You can even intermix this with regular citations, although it's not recommended: fig. 2, tbl. 1, <span class="citation">[@unprocessedCitation]</span></p>
 <p>You can also have custom chapter reference labels, like sec. AppA.CustLab</p>
-<h1 id="sec:sec1">Chapter 1. Figures</h1>
+<h1 id="sec:sec1"><span class="header-section-number">1</span> Chapter 1. Figures</h1>
 <div class="figure">
 <img src="img1.jpg" alt="Figure # 2: First figure" />
 <p class="caption">Figure # 2: First figure</p>
@@ -73,9 +73,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <img src="img1.jpg" alt="Unlabelled image" />
 <p class="caption">Unlabelled image</p>
 </div>
-<h1 id="sec:sec2">Chapter 2. Equations</h1>
+<h1 id="sec:sec2"><span class="header-section-number">2</span> Chapter 2. Equations</h1>
 <p><br /><span class="math display"><em>P</em><sub><em>i</em></sub>(<em>x</em>) = ∑<sub><em>i</em></sub><em>a</em><sub><em>i</em></sub><em>x</em><sup><em>i</em></sup>  (1)</span><br /></p>
-<h1 id="sec:chapter-3.-tables">Chapter 3. Tables</h1>
+<h1 id="sec:chapter-3.-tables"><span class="header-section-number">3</span> Chapter 3. Tables</h1>
 <table>
 <caption><em>Table 1</em>: Table example</caption>
 <thead>
@@ -114,9 +114,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 </tbody>
 </table>
-<h1 id="sec:chapter-4.-code-blocks">Chapter 4. Code blocks</h1>
+<h1 id="sec:chapter-4.-code-blocks"><span class="header-section-number">4</span> Chapter 4. Code blocks</h1>
 <p>There are a couple options for code block labels. Those work only if code block id starts with <code>lst:</code>, e.g. <code>{#lst:label}</code></p>
-<h2 id="sec:caption-attr"><code>caption</code> attribute</h2>
+<h2 id="sec:caption-attr"><span class="header-section-number">4.1</span> <code>caption</code> attribute</h2>
 <p><code>caption</code> attribute will be treated as code block caption. If code block has both id and <code>caption</code> attributes, it will be treated as numbered code block.</p>
 <div id="lst:captionAttr" class="listing haskell">
 <p>Listing 1: Listing caption</p>
@@ -124,14 +124,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 main <span class="fu">=</span> putStrLn <span class="st">&quot;Hello World!&quot;</span></code></pre></div>
 </div>
 <p></p>
-<h2 id="sec:table-capts">Table-style captions</h2>
+<h2 id="sec:table-capts"><span class="header-section-number">4.2</span> Table-style captions</h2>
 <p>Enabled with <code>codeBlockCaptions</code> metadata option. If code block is immediately adjacent to paragraph, starting with <code>Listing:</code> or <code>:</code>, said paragraph will be treated as code block caption.</p>
 <div id="lst:tableCaption" class="listing haskell">
 <p>Listing 2: Listing caption</p>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">main ::</span> <span class="dt">IO</span> ()
 main <span class="fu">=</span> putStrLn <span class="st">&quot;Hello World!&quot;</span></code></pre></div>
 </div>
-<h2 id="sec:wrapping-div">Wrapping div</h2>
+<h2 id="sec:wrapping-div"><span class="header-section-number">4.3</span> Wrapping div</h2>
 <p>Wrapping code block without label in a div with id <code>lst:...</code> and class, starting with <code>listing</code>, and adding paragraph before code block, but inside div, will treat said paragraph as code block caption.</p>
 <div id="lst:wrappingDiv" class="listing haskell">
 <p>Listing 3: Listing caption</p>
@@ -141,26 +141,26 @@ main <span class="fu">=</span> putStrLn <span class="st">&quot;Hello World!&quot
 <h1 id="sec:unnumbered-chapter." class="unnumbered">Unnumbered chapter.</h1>
 <p>This chapter doesn't change chapter prefix of referenced elements, instead keeping number of previous chapter, e.g.</p>
 <p><br /><span class="math display"><em>S</em>(<em>x</em>) = ∫<sub><em>x</em><sub>1</sub></sub><sup><em>x</em><sub>2</sub></sup><em>a</em><em>x</em> + <em>b</em> <em>d</em><em>x</em>  (2)</span><br /></p>
-<h1 id="sec:chapter-5.-reference-lists">Chapter 5. Reference lists</h1>
+<h1 id="sec:chapter-5.-reference-lists"><span class="header-section-number">5</span> Chapter 5. Reference lists</h1>
 <p>It's also possible to show lists of figures and tables, like this:</p>
-<h2 id="list-of-figures">List of Figures</h2>
+<h2 id="list-of-figures"><span class="header-section-number">5.1</span> List of Figures</h2>
 <ol class="incremental">
 <li>A figure</li>
 <li>First figure</li>
 <li>Second figure</li>
 <li>Third figure</li>
 </ol>
-<h2 id="list-of-tables">List of Tables</h2>
+<h2 id="list-of-tables"><span class="header-section-number">5.2</span> List of Tables</h2>
 <ol class="incremental">
 <li>Table example</li>
 </ol>
-<h1>List of Listings</h1>
+<h1><span class="header-section-number">6</span> List of Listings</h1>
 <ol class="incremental">
 <li>Listing caption</li>
 <li>Listing caption</li>
 <li>Listing caption</li>
 </ol>
-<h1 id="sec:appendix-a.-custom-labels" label="AppA">Appendix A. Custom labels</h1>
-<h2 id="sec:custlabs" label="CustLab">This section will have custom label</h2>
+<h1 id="sec:appendix-a.-custom-labels" label="AppA"><span class="header-section-number">7</span> Appendix A. Custom labels</h1>
+<h2 id="sec:custlabs" label="CustLab"><span class="header-section-number">7.1</span> This section will have custom label</h2>
 </body>
 </html>
