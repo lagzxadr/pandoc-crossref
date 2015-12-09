@@ -35,7 +35,12 @@ Chapter 1. Figures {#sec:sec1}
 Chapter 2. Equations {#sec:sec2}
 ====================
 
+Display equations are labelled and numbered
+
 $$ P_i(x) = \sum_i a_i x^i \qquad(1)$$
+
+Since 0.1.6.0 those can also appear in the middle of paragraph
+$$a x^2 + b x^2 + c = 0\qquad(2)$$ like this.
 
 Chapter 3. Tables {#sec:chapter-3.-tables}
 =================
@@ -121,8 +126,7 @@ Unnumbered chapter. {#sec:unnumbered-chapter. .unnumbered}
 
 This chapter doesn't change chapter prefix of referenced elements,
 instead keeping number of previous chapter, e.g.
-
-$$ S(x) = \int_{x_1}^{x_2} a x+b \  \mathrm{d}x \qquad(2)$$
+$$ S(x) = \int_{x_1}^{x_2} a x+b \  \mathrm{d}x \qquad(3)$$
 
 Chapter 5. Reference lists {#sec:chapter-5.-reference-lists}
 ==========================
