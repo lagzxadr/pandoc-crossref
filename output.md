@@ -4,7 +4,7 @@ tables (see tbl. 1) and sections (secs. 1, 2, 4.1-4.3)
 
 For immediate example, see fig. 1
 
-![Figure \# 1: A figure](img1.jpg)
+![Figure \# 1: A figure](img1.jpg){#fig:figure0}
 
 There is also support for code blocks, for example, lsts. 1-3
 
@@ -21,16 +21,28 @@ it's not recommended: fig. 2, tbl. 1, [@unprocessedCitation]
 You can also have custom chapter reference labels, like
 sec. AppA.CustLab
 
+Subfigures are supported, see figs. 5, 5 (b)
+
 Chapter 1. Figures {#sec:sec1}
 ==================
 
-![Figure \# 2: First figure](img1.jpg)
+![Figure \# 2: First figure](img1.jpg){#fig:figure1}
 
-![Figure \# 3: Second figure](img2.jpg)
+![Figure \# 3: Second figure](img2.jpg){#fig:figure2}
 
-![Figure \# 4: Third figure](img3.jpg)
+![Figure \# 4: Third figure](img3.jpg){#fig:figure3}
 
 ![Unlabelled image](img1.jpg)
+
+<div id="fig:subfigures" class="subfigures">
+
+![a](img1.jpg){#fig:}
+
+![b](img1.jpg){#fig:subfigureB}
+
+Figure \# 5: Subfigures caption. a — Subfigure a, b — Subfigure b
+
+</div>
 
 Chapter 2. Equations {#sec:sec2}
 ====================
@@ -140,6 +152,9 @@ List of Figures
 2.  First figure
 3.  Second figure
 4.  Third figure
+5.  Subfigure a
+6.  Subfigure b
+7.  Subfigures caption
 
 List of Tables
 --------------

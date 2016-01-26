@@ -34,6 +34,9 @@ tbl.~\ref{tbl:table1}, {[}@unprocessedCitation{]}
 You can also have custom chapter reference labels, like
 sec.~\ref{sec:custlabs}
 
+Subfigures are supported, see
+figs.~\ref{fig:subfigures}, \ref{fig:subfigureB}
+
 \chapter{Chapter 1. Figures}\label{sec:sec1}
 
 \begin{figure}[htbp]
@@ -58,6 +61,19 @@ sec.~\ref{sec:custlabs}
 \centering
 \includegraphics{img1.jpg}
 \caption{Unlabelled image}
+\end{figure}
+
+\begin{figure}
+
+{\subfloat[Subfigure a]{\includegraphics{img1.jpg}\label{fig:}}}
+
+{\subfloat[Subfigure
+b]{\includegraphics{img1.jpg}\label{fig:subfigureB}}}
+
+	\caption{{Subfigures caption}}
+
+	\label{fig:subfigures}
+
 \end{figure}
 
 \chapter{Chapter 2. Equations}\label{sec:sec2}
@@ -114,7 +130,7 @@ treated as numbered code block.
 \begin{codelisting}
 \caption{Listing caption}
 
-\hyperdef{}{lst:captionAttr}{\label{lst:captionAttr}}
+\hypertarget{lst:captionAttr}{\label{lst:captionAttr}}
 \begin{Shaded}
 \begin{Highlighting}[]
 \OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}
@@ -134,9 +150,9 @@ is immediately adjacent to paragraph, starting with \texttt{Listing:} or
 
 \begin{codelisting}
 
-\caption{Listing caption}
+\caption{{Listing caption}}
 
-\hyperdef{}{lst:tableCaption}{\label{lst:tableCaption}}
+\hypertarget{lst:tableCaption}{\label{lst:tableCaption}}
 \begin{Shaded}
 \begin{Highlighting}[]
 \OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}
@@ -154,9 +170,9 @@ block, but inside div, will treat said paragraph as code block caption.
 
 \begin{codelisting}
 
-\caption{Listing caption}
+\caption{{Listing caption}}
 
-\hyperdef{}{lst:wrappingDiv}{\label{lst:wrappingDiv}}
+\hypertarget{lst:wrappingDiv}{\label{lst:wrappingDiv}}
 \begin{Shaded}
 \begin{Highlighting}[]
 \OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}

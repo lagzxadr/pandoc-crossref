@@ -48,7 +48,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This is a demo file for pandoc-crossref. With this filter, you can cross-reference figures (see figs. 1.1-1.3), display equations (see eq. 2.1), tables (see tbl. 3.1) and sections (secs. 1, 2, 4.1-4.3)</p>
 <p>For immediate example, see fig. 1</p>
 <div class="figure">
-<img src="img1.jpg" alt="Figure # 1: A figure" />
+<img src="img1.jpg" alt="Figure # 1: A figure" id="fig:figure0" />
 <p class="caption">Figure # 1: A figure</p>
 </div>
 <p>There is also support for code blocks, for example, lsts. 4.1-4.3</p>
@@ -56,22 +56,34 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In case of multiple references, capitalization is determined by first reference. Figs. 1.1, 1.2 is capitalized, while figs. 1.1, 1.2 is not.</p>
 <p>It is also possible to mix different references, like fig. 1.1, tbl. 3.1, lsts. 4.1, 4.2, figs. 1.2, 1.3, which will be grouped in order they are specified. You can even intermix this with regular citations, although it's not recommended: fig. 1.1, tbl. 3.1, <span class="citation">[@unprocessedCitation]</span></p>
 <p>You can also have custom chapter reference labels, like sec. AppA.CustLab</p>
+<p>Subfigures are supported, see figs. 1.4, 1.4 (b)</p>
 <h1 id="sec:sec1"><span class="header-section-number">1</span> Chapter 1. Figures</h1>
 <div class="figure">
-<img src="img1.jpg" alt="Figure # 1.1: First figure" />
+<img src="img1.jpg" alt="Figure # 1.1: First figure" id="fig:figure1" />
 <p class="caption">Figure # 1.1: First figure</p>
 </div>
 <div class="figure">
-<img src="img2.jpg" alt="Figure # 1.2: Second figure" />
+<img src="img2.jpg" alt="Figure # 1.2: Second figure" id="fig:figure2" />
 <p class="caption">Figure # 1.2: Second figure</p>
 </div>
 <div class="figure">
-<img src="img3.jpg" alt="Figure # 1.3: Third figure" />
+<img src="img3.jpg" alt="Figure # 1.3: Third figure" id="fig:figure3" />
 <p class="caption">Figure # 1.3: Third figure</p>
 </div>
 <div class="figure">
 <img src="img1.jpg" alt="Unlabelled image" />
 <p class="caption">Unlabelled image</p>
+</div>
+<div id="fig:subfigures" class="subfigures">
+<div class="figure">
+<img src="img1.jpg" alt="a" id="fig:" />
+<p class="caption">a</p>
+</div>
+<div class="figure">
+<img src="img1.jpg" alt="b" id="fig:subfigureB" />
+<p class="caption">b</p>
+</div>
+<p>Figure # 1.4: Subfigures caption. a — Subfigure a, b — Subfigure b</p>
 </div>
 <h1 id="sec:sec2"><span class="header-section-number">2</span> Chapter 2. Equations</h1>
 <p>Display equations are labelled and numbered</p>
@@ -150,6 +162,9 @@ main <span class="fu">=</span> putStrLn <span class="st">&quot;Hello World!&quot
 <p>1.1 First figure</p>
 <p>1.2 Second figure</p>
 <p>1.3 Third figure</p>
+<p>1.4 Subfigure a</p>
+<p>1.4 Subfigure b</p>
+<p>1.4 Subfigures caption</p>
 </div>
 <h2 id="list-of-tables"><span class="header-section-number">5.2</span> List of Tables</h2>
 <div class="list">
