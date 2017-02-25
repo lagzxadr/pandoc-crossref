@@ -6,10 +6,10 @@ cross-reference figures (see
 
 For immediate example, see \cref{fig:figure0}
 
-\begin{figure}[htbp]
+\begin{figure}
 \centering
 \includegraphics{img1.jpg}
-\caption{\label{fig:figure0}A figure}
+\caption{A figure}\label{fig:figure0}
 \end{figure}
 
 There is also support for code blocks, for example,
@@ -36,40 +36,40 @@ Subfigures are supported, see \cref{fig:subfigures,fig:subfigureB}
 
 \section{Chapter 1. Figures}\label{sec:sec1}
 
-\begin{figure}[htbp]
+\begin{figure}
 \centering
 \includegraphics{img1.jpg}
-\caption{\label{fig:figure1}First figure}
+\caption{First figure}\label{fig:figure1}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}
 \centering
 \includegraphics{img2.jpg}
-\caption{\label{fig:figure2}Second figure}
+\caption{Second figure}\label{fig:figure2}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}
 \centering
 \includegraphics{img3.jpg}
-\caption{\label{fig:figure3}Third figure}
+\caption{Third figure}\label{fig:figure3}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}
 \centering
 \includegraphics{img1.jpg}
 \caption{Unlabelled image}
 \end{figure}
 
 \begin{figure}
+\centering
 
-{\subfloat[Subfigure a]{\includegraphics{img1.jpg}\label{fig:}}}
+\subfloat[Subfigure a]{\includegraphics{img1.jpg}}
 
-{\subfloat[Subfigure
-b]{\includegraphics{img1.jpg}\label{fig:subfigureB}}}
+\subfloat[Subfigure b]{\includegraphics{img1.jpg}\label{fig:subfigureB}}
 
-	\caption{{Subfigures caption}}
+\caption{Subfigures caption}
 
-	\label{fig:subfigures}
+\label{fig:subfigures}
 
 \end{figure}
 
@@ -85,7 +85,8 @@ this.
 
 \section{Chapter 3. Tables}\label{sec:chapter-3.-tables}
 
-\begin{longtable}[c]{@{}ll@{}}
+\hypertarget{tbl:table1}{}
+\begin{longtable}[]{@{}ll@{}}
 \caption{\label{tbl:table1}Table example }\tabularnewline
 \toprule
 First Header & Second Header\tabularnewline
@@ -102,7 +103,7 @@ Content Cell & Content Cell\tabularnewline
 
 Table without caption:
 
-\begin{longtable}[c]{@{}ll@{}}
+\begin{longtable}[]{@{}ll@{}}
 \toprule
 First Header & Second Header\tabularnewline
 \midrule
@@ -130,8 +131,8 @@ treated as numbered code block.
 \hypertarget{lst:captionAttr}{\label{lst:captionAttr}}
 \begin{Shaded}
 \begin{Highlighting}[]
-\OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}
-\NormalTok{main }\FunctionTok{=} \NormalTok{putStrLn }\StringTok{"Hello World!"}
+\OtherTok{main ::} \DataTypeTok{IO}\NormalTok{ ()}
+\NormalTok{main }\FunctionTok{=}\NormalTok{ putStrLn }\StringTok{"Hello World!"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -147,13 +148,13 @@ is immediately adjacent to paragraph, starting with \texttt{Listing:} or
 
 \begin{codelisting}
 
-\caption{{Listing caption}}
+\caption{Listing caption}
 
 \hypertarget{lst:tableCaption}{\label{lst:tableCaption}}
 \begin{Shaded}
 \begin{Highlighting}[]
-\OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}
-\NormalTok{main }\FunctionTok{=} \NormalTok{putStrLn }\StringTok{"Hello World!"}
+\OtherTok{main ::} \DataTypeTok{IO}\NormalTok{ ()}
+\NormalTok{main }\FunctionTok{=}\NormalTok{ putStrLn }\StringTok{"Hello World!"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -167,13 +168,13 @@ block, but inside div, will treat said paragraph as code block caption.
 
 \begin{codelisting}
 
-\caption{{Listing caption}}
+\caption{Listing caption}
 
 \hypertarget{lst:wrappingDiv}{\label{lst:wrappingDiv}}
 \begin{Shaded}
 \begin{Highlighting}[]
-\OtherTok{main ::} \DataTypeTok{IO} \NormalTok{()}
-\NormalTok{main }\FunctionTok{=} \NormalTok{putStrLn }\StringTok{"Hello World!"}
+\OtherTok{main ::} \DataTypeTok{IO}\NormalTok{ ()}
+\NormalTok{main }\FunctionTok{=}\NormalTok{ putStrLn }\StringTok{"Hello World!"}
 \end{Highlighting}
 \end{Shaded}
 

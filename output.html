@@ -76,7 +76,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="fig:subfigures" class="subfigures">
 <div class="figure">
-<img src="img1.jpg" alt="a" id="fig:" />
+<img src="img1.jpg" alt="a" />
 <p class="caption">a</p>
 </div>
 <div class="figure">
@@ -87,9 +87,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <h1 id="sec:sec2"><span class="header-section-number">2</span> Chapter 2. Equations</h1>
 <p>Display equations are labelled and numbered</p>
-<p><br /><span class="math display"><em>P</em><sub><em>i</em></sub>(<em>x</em>)=∑<sub><em>i</em></sub><em>a</em><sub><em>i</em></sub><em>x</em><sup><em>i</em></sup>  (1)</span><br /></p>
-<p>Since 0.1.6.0 those can also appear in the middle of paragraph <br /><span class="math display"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>x</em><sup>2</sup> + <em>c</em> = 0  (2)</span><br /> like this.</p>
+<p><span id="eq:eqn1"><br /><span class="math display"><em>P</em><sub><em>i</em></sub>(<em>x</em>)=∑<sub><em>i</em></sub><em>a</em><sub><em>i</em></sub><em>x</em><sup><em>i</em></sup>  (1)</span><br /></span></p>
+<p>Since 0.1.6.0 those can also appear in the middle of paragraph <span id="eq:quadr"><br /><span class="math display"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>x</em><sup>2</sup> + <em>c</em> = 0  (2)</span><br /></span> like this.</p>
 <h1 id="sec:chapter-3.-tables"><span class="header-section-number">3</span> Chapter 3. Tables</h1>
+<div id="tbl:table1">
 <table>
 <caption><em>Table 1</em>: Table example</caption>
 <thead>
@@ -109,6 +110,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 </tbody>
 </table>
+</div>
 <p>Table without caption:</p>
 <table>
 <thead>
@@ -137,7 +139,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">main ::</span> <span class="dt">IO</span> ()
 main <span class="fu">=</span> putStrLn <span class="st">&quot;Hello World!&quot;</span></code></pre></div>
 </div>
-<p></p>
+
 <h2 id="sec:table-capts"><span class="header-section-number">4.2</span> Table-style captions</h2>
 <p>Enabled with <code>codeBlockCaptions</code> metadata option. If code block is immediately adjacent to paragraph, starting with <code>Listing:</code> or <code>:</code>, said paragraph will be treated as code block caption.</p>
 <div id="lst:tableCaption" class="listing haskell">
@@ -153,7 +155,7 @@ main <span class="fu">=</span> putStrLn <span class="st">&quot;Hello World!&quot
 main <span class="fu">=</span> putStrLn <span class="st">&quot;Hello World!&quot;</span></code></pre></div>
 </div>
 <h1 id="sec:unnumbered-chapter." class="unnumbered">Unnumbered chapter.</h1>
-<p>This chapter doesn't change chapter prefix of referenced elements, instead keeping number of previous chapter, e.g. <br /><span class="math display"><em>S</em>(<em>x</em>)=∫<sub><em>x</em><sub>1</sub></sub><sup><em>x</em><sub>2</sub></sup><em>a</em><em>x</em> + <em>b</em> <em>d</em><em>x</em>  (3)</span><br /></p>
+<p>This chapter doesn't change chapter prefix of referenced elements, instead keeping number of previous chapter, e.g. <span id="eq:eqn2"><br /><span class="math display"><em>S</em>(<em>x</em>)=∫<sub><em>x</em><sub>1</sub></sub><sup><em>x</em><sub>2</sub></sup><em>a</em><em>x</em> + <em>b</em> <em>d</em><em>x</em>  (3)</span><br /></span></p>
 <h1 id="sec:chapter-5.-reference-lists"><span class="header-section-number">5</span> Chapter 5. Reference lists</h1>
 <p>It's also possible to show lists of figures and tables, like this:</p>
 <h2 id="list-of-figures"><span class="header-section-number">5.1</span> List of Figures</h2>

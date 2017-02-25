@@ -37,7 +37,7 @@ Chapter 1. Figures {#sec:sec1}
 
 <div id="fig:subfigures" class="subfigures">
 
-![a](img1.jpg){#fig:}
+![a](img1.jpg)
 
 ![b](img1.jpg){#fig:subfigureB}
 
@@ -50,13 +50,15 @@ Chapter 2. Equations {#sec:sec2}
 
 Display equations are labelled and numbered
 
-$$ P_i(x) = \sum_i a_i x^i \qquad(2.1)$$
+[$$ P_i(x) = \sum_i a_i x^i \qquad(2.1)$$]{#eq:eqn1}
 
 Since 0.1.6.0 those can also appear in the middle of paragraph
-$$a x^2 + b x^2 + c = 0\qquad(2.2)$$ like this.
+[$$a x^2 + b x^2 + c = 0\qquad(2.2)$$]{#eq:quadr} like this.
 
 Chapter 3. Tables {#sec:chapter-3.-tables}
 =================
+
+<div id="tbl:table1">
 
   First Header   Second Header
   -------------- ---------------
@@ -64,6 +66,8 @@ Chapter 3. Tables {#sec:chapter-3.-tables}
   Content Cell   Content Cell
 
   : *Table 3.1*: Table example
+
+</div>
 
 Table without caption:
 
@@ -139,7 +143,7 @@ Unnumbered chapter. {#sec:unnumbered-chapter. .unnumbered}
 
 This chapter doesn't change chapter prefix of referenced elements,
 instead keeping number of previous chapter, e.g.
-$$ S(x) = \int_{x_1}^{x_2} a x+b \  \mathrm{d}x \qquad(4.1)$$
+[$$ S(x) = \int_{x_1}^{x_2} a x+b \  \mathrm{d}x \qquad(4.1)$$]{#eq:eqn2}
 
 Chapter 5. Reference lists {#sec:chapter-5.-reference-lists}
 ==========================

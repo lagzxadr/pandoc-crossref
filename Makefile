@@ -2,7 +2,8 @@ all: demomd pdf latex html md
 	git commit -a -m "Update examples"
 
 demomd:
-	git checkout master demo.md
+	git fetch origin master
+	git checkout origin/master demo.md
 
 pdf:
 	pandoc --number-sections -t latex --filter pandoc-crossref -o output.pdf -i demo.md
