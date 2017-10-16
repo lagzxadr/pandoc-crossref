@@ -8,6 +8,7 @@ import qualified Data.Map as M
 import Language.Haskell.TH hiding (Inline)
 import Language.Haskell.TH.Syntax hiding (Inline)
 import Data.List
+import Data.Generics
 import Text.Pandoc.CrossRef.Util.Template
 import Text.Pandoc.CrossRef.Util.CustomLabels (customLabel)
 
@@ -49,7 +50,6 @@ makeCon t cname = fromRecDef t cname makeCon' RecConE
 
 makeCon' :: Name -> Name -> Q [(Name, Exp)]
 makeCon' t accName = do
-    VarI _ t' _ <- reify accName
     funT <- [t|$(conT t) -> Bool -> Int -> [Inline]|]
     inlT <- [t|$(conT t) -> [Inline]|]
     blkT <- [t|$(conT t) -> [Block]|]
@@ -60,6 +60,8 @@ makeCon' t accName = do
     clT <- [t|$(conT t) -> String -> Int -> Maybe String|]
     let varName | Name (OccName n) _ <- accName = liftString n
     let dtv = return $ VarE $ mkName "dtv"
+    r <- reify accName
+    t' <- maybe (fail $ "No type in " ++ show r) return $ something (mkQ Nothing Just) r
     body <-
       if
       | t' == boolT -> [|getMetaBool $(varName) $(dtv)|]
