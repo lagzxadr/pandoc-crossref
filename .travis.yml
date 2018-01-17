@@ -1,47 +1,28 @@
-language: c
+language: nix
 sudo: false
 
 cache: false
 
-addons:
-  apt:
-    packages:
-    - libgmp-dev
-
 matrix:
   include:
-  - env: STACK_YAML=stack.yaml RELEASE_FN=ghc80-pandoc20
-    compiler: ": #GHC 8.0"
-  - env: STACK_YAML=stack.yaml RELEASE_FN=ghc80-pandoc20
-    compiler: ": #GHC 8.0"
-    os: osx
-  - env: STACK_YAML=stack-ghc82.yaml RELEASE_FN=ghc82-pandoc20
-    compiler: ": #GHC 8.2"
-  - env: STACK_YAML=stack-ghc82.yaml RELEASE_FN=ghc82-pandoc20
-    compiler: ": #GHC 8.2"
-    os: osx
+  - {}
+  - os: osx
 
-before_install:
-- unset CC
-- export PATH=/opt/ghc/$GHCVER/bin:$PATH
-- mkdir -p ~/.local/bin
-- export PATH=$HOME/.local/bin:$PATH
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then STACK_OS=osx-x86_64 ; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then STACK_OS=linux-x86_64 ; fi
-- travis_retry curl -L https://www.stackage.org/stack/$STACK_OS | tar xz --strip-components=1 -C ~/.local/bin
-- travis_wait 30 stack --no-terminal setup
 script:
-- travis_wait 90 stack --no-terminal build
+- nix-build -j8
 deploy:
   provider: releases
   api_key:
     secure: HgG0wburBoUnULjqK3I86k9ZNVLks4/WXPicd7rn2z8HbFpFv/QVN6882hYbsWQd3xhe+Q+hTfXMSL2lbZpiEKAB3UgQclJMP84A42DyvS6RE5a+kwl/wVVNXQh4sNlzuApTSzjYZZkYvroyakqsucCRg7u56eN4NM2VvrDUuJw=
-  file: "$TRAVIS_BUILD_DIR/${TRAVIS_OS_NAME}-${RELEASE_FN}.tar.gz"
+  file: "$TRAVIS_BUILD_DIR/${TRAVIS_OS_NAME}-nix.tar.gz"
   skip_cleanup: true
   overwrite: true
   on:
     tags: true
 before_deploy:
-- stack --no-terminal install
-- stack --no-terminal exec -- pandoc -s -t man docs/index.md -o $HOME/.local/bin/pandoc-crossref.1
-- tar czf "$TRAVIS_BUILD_DIR/${TRAVIS_OS_NAME}-${RELEASE_FN}.tar.gz" -C "$HOME/.local/bin/" "./pandoc-crossref" "./pandoc-crossref.1"
+- cp "$TRAVIS_BUILD_DIR/result/bin/pandoc-crossref" "$TRAVIS_BUILD_DIR/pandoc-crossref"
+- chown "$USER" "$TRAVIS_BUILD_DIR/pandoc-crossref"
+- chmod u+w "$TRAVIS_BUILD_DIR/pandoc-crossref"
+- nix-shell --command "patchelf --set-interpreter /lib64/ld-linux-x86-64.so.2 $TRAVIS_BUILD_DIR/pandoc-crossref"
+- nix-shell --command "pandoc -s -t man docs/index.md -o $TRAVIS_BUILD_DIR/pandoc-crossref.1"
+- tar czf "$TRAVIS_BUILD_DIR/${TRAVIS_OS_NAME}-nix.tar.gz" -C "$TRAVIS_BUILD_DIR" "./pandoc-crossref.1" "./pandoc-crossref"

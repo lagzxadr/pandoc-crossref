@@ -1,0 +1,14 @@
+#!/bin/bash
+
+arg="$@"
+if [[ "${arg:0:1}" == "@" ]]; then
+  if grep -q -- '^"dist/build/pandoc-crossref/pandoc-crossref"$' "${arg:1}"; then
+    sed -ri '
+    /^"-l(lua|gmp)"$/ s/.*/"-Wl,-Bstatic"\n\0\n"-Wl,-Bdynamic"/;
+    /^"-(dynamic|shared)"$/ d;
+    ' "${arg:1}"
+    #echo '"-static"' >> "${arg:1}"
+    cat "${arg:1}"
+  fi
+fi
+exec cc "$@"
